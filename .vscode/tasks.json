@@ -1,0 +1,8 @@
+{
+ "version":"2.0.0",
+ "tasks":[
+  {"label":"B1-1: build","type":"shell","command":"powershell","args":["-NoProfile","-ExecutionPolicy","Bypass","-File","scripts/build.ps1"],"group":{"kind":"build","isDefault":true},"problemMatcher":"$gcc"},
+  {"label":"B1-1: seed development users","type":"shell","command":"powershell","args":["-NoProfile","-ExecutionPolicy","Bypass","-File","scripts/run.ps1","-Action","seed"],"problemMatcher":[]},
+  {"label":"B1-1: run","type":"shell","command":"powershell","args":["-NoProfile","-ExecutionPolicy","Bypass","-File","scripts/run.ps1"],"problemMatcher":[]}
+ ]
+}

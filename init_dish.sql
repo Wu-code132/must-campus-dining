@@ -1,0 +1,42 @@
+-- 创建菜品表
+CREATE TABLE Dish (
+    dish_id VARCHAR(20) PRIMARY KEY,
+    dish_name VARCHAR(100) NOT NULL,
+    canteen VARCHAR(50) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    spiciness VARCHAR(20),
+    flavor VARCHAR(50),
+    status VARCHAR(20) DEFAULT 'ON_SALE', -- ON_SALE, OFF_SALE
+    data_source VARCHAR(20) DEFAULT 'OFFICIAL', -- OFFICIAL, USER_REPORTED
+    allergen_info TEXT -- 存储过敏原，可用逗号分隔
+);
+
+-- 插入 20 条澳门科技大学食堂的合成数据
+INSERT INTO Dish (dish_id, dish_name, canteen, price, spiciness, flavor, status, data_source, allergen_info) VALUES
+-- 1-5: O座厨艺天地基础数据（官方）
+('D001', '铁板牛肉拌饭', 'O座厨艺天地', 48.00, '微辣', '咸鲜', 'ON_SALE', 'OFFICIAL', '大豆'),
+('D002', '元气牛肉乌冬', 'O座厨艺天地', 45.00, '不辣', '清淡', 'ON_SALE', 'OFFICIAL', '小麦,大豆'),
+('D005', '芝士肥牛拌饭', 'O座厨艺天地', 52.00, '不辣', '奶香', 'ON_SALE', 'OFFICIAL', '奶制品,大豆'),
+('D006', '韩式肥牛部队火锅', 'O座厨艺天地', 68.00, '中辣', '甜辣', 'ON_SALE', 'OFFICIAL', '大豆,小麦'),
+('D007', '宫日厨照烧鸡排饭', 'O座厨艺天地', 49.00, '不辣', '咸甜', 'ON_SALE', 'OFFICIAL', '大豆'),
+
+-- 6-10: E座点聚餐厅数据（官方+用户上报）
+('D003', '乐山麻辣拌', 'E座点聚餐厅', 48.00, '特辣', '麻辣', 'ON_SALE', 'OFFICIAL', '花生'),
+('D008', '雪菜肉丝拉面', 'E座点聚餐厅', 42.00, '不辣', '咸鲜', 'ON_SALE', 'OFFICIAL', '小麦,鸡蛋'),
+('D010', '豆角肉沫饭', 'E座点聚餐厅', 56.00, '不辣', '咸鲜', 'ON_SALE', 'OFFICIAL', '大豆,鸡蛋'),
+('D009', '千页豆腐饭', 'E座点聚餐厅', 38.00, '微辣', '浓汁', 'ON_SALE', 'USER_REPORTED', '大豆'),
+('D020', '免费紫菜汤', 'E座点聚餐厅', 0.00, '不辣', '清淡', 'OFF_SALE', 'USER_REPORTED', '海鲜'),
+
+-- 11-15: P座点绽数据（官方+用户上报）
+('D004', '葡挞鸡蛋仔', 'P座点绽', 38.00, '不辣', '香甜', 'ON_SALE', 'USER_REPORTED', '鸡蛋,奶制品'),
+('D011', '小炒黄牛肉套餐', 'P座点绽', 62.00, '微辣', '微酸辣', 'ON_SALE', 'USER_REPORTED', '大豆'),
+('D012', '泽贤记原味葡挞', 'P座点绽', 15.00, '不辣', '香甜', 'ON_SALE', 'OFFICIAL', '鸡蛋,小麦,奶制品'),
+('D013', '海云台部队拉面', 'P座点绽', 58.00, '中辣', '微辣', 'ON_SALE', 'USER_REPORTED', '小麦,鸡蛋,大豆'),
+('D017', '隐藏特调柠檬茶', 'P座点绽', 25.00, '不辣', '酸甜', 'ON_SALE', 'USER_REPORTED', '无'),
+
+-- 16-20: 各类边界情况及特殊菜品（下架、重辣等）
+('D014', '重庆毛血旺', 'O座厨艺天地', 58.00, '特辣', '麻辣', 'ON_SALE', 'OFFICIAL', '大豆,动物血'),
+('D015', '麻辣香锅(微辣版)', 'O座厨艺天地', 55.00, '微辣', '麻辣鲜香', 'ON_SALE', 'USER_REPORTED', '花生,大豆'),
+('D016', '红烧排骨饭', 'E座点聚餐厅', 48.00, '不辣', '咸甜', 'ON_SALE', 'OFFICIAL', '大豆'),
+('D018', '鳗鱼蟹子炒饭', 'O座厨艺天地', 53.00, '不辣', '鲜香', 'OFF_SALE', 'USER_REPORTED', '海鲜,鸡蛋'),
+('D019', '北方手工水饺', 'E座点聚餐厅', 45.00, '不辣', '咸鲜', 'ON_SALE', 'OFFICIAL', '小麦,猪肉');

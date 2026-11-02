@@ -1,0 +1,28 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": [
+    {
+      "dishId": "D001",
+      "dishName": "铁板牛肉拌饭",
+      "canteen": "O座厨艺天地",
+      "price": 48.0,
+      "spiciness": "微辣",
+      "flavor": "咸鲜浓郁",
+      "status": "ON_SALE",
+      "dataSource": "OFFICIAL", 
+      "allergens": ["大豆"]
+    },
+    {
+      "dishId": "D002",
+      "dishName": "隐藏菜单-炸鸡腿",
+      "canteen": "P座点绽",
+      "price": 25.0,
+      "spiciness": "不辣",
+      "flavor": "香脆",
+      "status": "ON_SALE",
+      "dataSource": "USER_REPORTED", 
+      "allergens": ["小麦"]
+    }
+  ]
+}

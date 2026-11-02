@@ -1,0 +1,12 @@
+.env
+build/
+data/
+.tools/
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.obj
+*.o
+.zig-cache/
+uploads/

@@ -32,6 +32,8 @@ void resolveFeedback(int fid, string current_status) {
 
 
 
+
+
 struct Feedback {
     string user_id;          
     string content;          
@@ -59,6 +61,12 @@ void createData() {
 }
 
 
+
+
+
+
+
+
 struct Feedback {
     string status;
     int followUpCount;
@@ -80,6 +88,11 @@ void resolveFeedback(Feedback &fb) {
         fb.status = "Resolved";
     }
 }
+
+
+
+
+
 
 
 
